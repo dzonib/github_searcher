@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/github_searcher/static/js/main.08fdb54c.chunk.js",
+    "main.js.map": "/github_searcher/static/js/main.08fdb54c.chunk.js.map",
+    "runtime~main.js": "/github_searcher/static/js/runtime~main.9c6e494f.js",
+    "runtime~main.js.map": "/github_searcher/static/js/runtime~main.9c6e494f.js.map",
+    "static/js/2.24d8ea41.chunk.js": "/github_searcher/static/js/2.24d8ea41.chunk.js",
+    "static/js/2.24d8ea41.chunk.js.map": "/github_searcher/static/js/2.24d8ea41.chunk.js.map",
+    "index.html": "/github_searcher/index.html",
+    "precache-manifest.6c1f9bc39de60152d08c3c098f811efb.js": "/github_searcher/precache-manifest.6c1f9bc39de60152d08c3c098f811efb.js",
+    "service-worker.js": "/github_searcher/service-worker.js",
+    "static/media/fidget-spinner-loading.gif": "/github_searcher/static/media/fidget-spinner-loading.9b54dbe8.gif"
+  }
+}
