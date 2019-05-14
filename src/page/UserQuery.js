@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { StyledSearch } from '../styles/StyledSearch';
+import User from '../components/User';
 
 export default function Users() {
 
     const [query, setQuery] = useState('')
     const [user, setUser] = useState('')
+    const [error, setError] = useState('')
 
     async function handleQuery(e) {
         e.preventDefault()
@@ -14,29 +17,30 @@ export default function Users() {
             setUser(data)
         } catch(e) {
             console.log(e.message)
+            setError(e.message)
         }
     }
 
-    const {
-        avatar_url,
-        login,
-        html_url
-    } = user
-    console.log(user)
+
+    //TODO: LINK NOT WORKING FIX IT
+    if (error) {
+        return (
+            <>
+                <Link to="/" style={{fontSize: '4rem'}}>back</Link>
+                <h1>User not found</h1>
+            </>
+        )
+    }
     return (
-        <>
-            <h1>Search for user</h1>
+        <StyledSearch>
+            <User {...user}/>
+
+            <h1>Please enter github username of the person you want to find in the input field</h1>
             <form onSubmit={handleQuery}>
-                <input type="text" onChange={(e) => setQuery(e.target.value)}/>
+                <input type="text" placeholder="Username" onChange={(e) => setQuery(e.target.value)}/>
                 <button type="submit">Search</button>
             </form>
-            <div>
-                {login && <h2>{login}</h2>}
-                {avatar_url && <img src={avatar_url} alt="" style={{width: "200px", height: "200px"}}/>}
-                {login &&  <a href={html_url} target="_blank" rel="noopener noreferrer"><p>Visit {login} on github.com</p></a>}
-                {login && <Link></Link>}
-                
-            </div>
-        </>
+
+        </StyledSearch>
     )
 }
