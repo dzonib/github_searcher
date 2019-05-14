@@ -1,10 +1,12 @@
 import React from 'react'
 import Users from '../page/UserQuery'
 
+import {Route} from 'react-router-dom'
+
 function App() {
   return (
     <>
-      <Users /> 
+    <Route exact path="/" component={Users}/>
     </>
   )
 }
